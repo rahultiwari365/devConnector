@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://rahul365:rahul365@devconnector.6vqe7.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "3700345fd45bf4a17019",
+    "githubSecret": "00343e2e88fd7214b5f46633a9053c58d3b2426e"
+}
