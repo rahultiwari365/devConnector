@@ -11,20 +11,20 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     getPosts();
   }, [getPosts]);
   console.log("posts-", posts);
+  console.log("loading-", loading);
 
   return <Fragment>
-  { loading ? <Spinner /> : <Fragment>
+  { loading || loading === undefined ? <Spinner /> : <Fragment>
       <h1 className="large text-primary">Posts</h1>
       <p className="lead">
           <i className="fab fa-user"></i> Welcome to community
       </p>
       <PostForm />
       <div className="posts">
-          { !posts ? <h4>No Posts found...</h4> : (
-              posts.map(post => {
+          { posts.map(post => {
                  return <PostItem key={post._id} post={post} />
               })
-          )}
+          }
       </div>
       </Fragment>}
     </Fragment>

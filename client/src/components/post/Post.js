@@ -14,18 +14,15 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
   }, [getPost]);
 
   console.log("Post--", post);
+  console.log("loading", loading);
 
-  return loading || post === null ? (
+  return loading || loading === undefined || post === null ? (
     <Spinner />
   ) : (
     <Fragment>
       <Link to={"/posts"} className="btn">
         Back to posts
       </Link>
-      {!post ? (
-        <h4>No Post...</h4>
-      ) : (
-        <Fragment>
           <PostItem post={post} showActions={false} />{" "}
           <CommentForm postId={post._id} />
           <div className="comments">
@@ -33,8 +30,6 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
                   <CommentItem key={comment._id} comment={comment} postId={post._id} />
               ))}
           </div>
-        </Fragment>
-      )}
     </Fragment>
   );
 };
